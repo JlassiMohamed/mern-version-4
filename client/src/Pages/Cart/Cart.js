@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import CartItem from "../../Components/CartItem/CartItem";
@@ -7,7 +7,6 @@ import "./Cart.css";
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cartReducer.cartItems);
-  // console.log(cartItems);
   const dispatch = useDispatch();
 
   const qtyChangeHandler = (id, qty) => {
@@ -27,6 +26,18 @@ const Cart = () => {
       .reduce((price, item) => price + item.price * item.qty, 0)
       .toFixed(2);
   };
+  const [address, setAddress] = useState({});
+  const handleChange = (e) => {
+    setAddress({ ...address, [e.target.name]: e.target.value });
+  };
+  const [checkout, setCheckout] = useState(false);
+  const handleChechout = () => {
+    if (!checkout) {
+      setCheckout(true);
+    }else{
+      // dispatch(postOrder(adress,cartItems, history))
+    }
+  };
 
   return (
     <>
@@ -36,6 +47,41 @@ const Cart = () => {
             <div>
               Your Cart Is Empty <Link to="/">Go Back</Link>
             </div>
+          ) : checkout ? (
+            <form>
+              <label>Appartement Number</label>
+              <input
+                name="appartement"
+                value={address.appartement}
+                onChange={handleChange}
+                placeholder="enter your name"
+                style={{ width: "200px" }}
+              />
+              <label>Street</label>
+              <input
+                name="street"
+                value={address.street}
+                onChange={handleChange}
+                placeholder="enter your contact phone"
+                style={{ width: "200px" }}
+              />
+              <label>Locality</label>
+              <input
+                name="locality"
+                value={address.locality}
+                onChange={handleChange}
+                placeholder="register your email"
+                style={{ width: "200px" }}
+              />
+              <label>ZipCode</label>
+              <input
+                name="zipCode"
+                value={address.zipCode}
+                onChange={handleChange}
+                placeholder="enter the address of your restaurant"
+                style={{ width: "200px" }}
+              />
+            </form>
           ) : (
             cartItems.map((item) => (
               <CartItem
@@ -53,7 +99,13 @@ const Cart = () => {
             <p>${getCartSubTotal()}</p>
           </div>
           <div>
-            <button>Proceed To Checkout</button>
+            <button onClick={handleChechout}>
+              {!checkout ? (
+                "Proceed To Checkout"
+              ) : (
+                <Link to="/checkout">Place Order</Link>
+              )}
+            </button>
           </div>
         </div>
       </div>

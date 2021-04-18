@@ -17,12 +17,17 @@ const Navbar = () => {
       {isAuth && edit ? (
         <div className="welcome">
           {seller.name}
+          <Link to="/checkout">
+            <a className="btn-area" href="/">
+              Order
+            </a>
+          </Link>
           <Link to={`/seller/dashboard/${user.restaurant}`}>
             <a className="btn-area" href="/">
               Dashboard
             </a>
           </Link>
-          <Link to="/" onClick={() => dispatch(logout())}>
+          <Link to="/signin" onClick={() => dispatch(logout())}>
             <a href="/" className="btn-area">
               Logout
             </a>
@@ -31,12 +36,17 @@ const Navbar = () => {
       ) : isAuth && !edit ? (
         <div className="welcome">
           hello, {user.name}
+          <Link to="/checkout">
+            <a className="btn-area" href="/">
+              Order
+            </a>
+          </Link>
           <Link to="/cart">
             <a className="btn-area" href="/">
               Cart
             </a>
           </Link>
-          <Link to="/" onClick={() => dispatch(logout())}>
+          <Link to="/signin" onClick={() => dispatch(logout())}>
             <a href="/" className="btn-area">
               Logout
             </a>

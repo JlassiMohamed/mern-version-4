@@ -9,8 +9,10 @@ import Landpage from "./Pages/Landpage/Landpage";
 import Order from "./Pages/Order/Order";
 import SignIn from "./Pages/SignIn/SignIn";
 import SignUp from "./Pages/SignUp/SignUp";
-import PrivateRoute from "./router/PrivateRoute";
 import AddRestaurant from "./Pages/AddRestaurant/AddRestaurant";
+import Checkout from "./Pages/Checkout/Checkout";
+import PrivateRoute from "./router/PrivateRoute";
+import UserRoute from "./router/UserRoute";
 import { currentUser } from "./JS/actions/user";
 import "./App.css";
 
@@ -33,12 +35,12 @@ function App() {
             path={["/addrestaurant", "/setting"]}
             component={AddRestaurant}
           />
-          <Route
+          <PrivateRoute
             path={["/order/:sellerId", "/seller/dashboard/:sellerId"]}
             render={(props) => <Order {...props} />}
           />
-          <PrivateRoute path="/cart" component={Cart} />
-          {/* <Route path="" component={} /> */}
+          <UserRoute path="/cart" component={Cart} />
+          <PrivateRoute path="/checkout" component={Checkout} />
           {/* <Route path="" component={} /> */}
           <Route path="/*" component={Errors} />
         </Switch>
