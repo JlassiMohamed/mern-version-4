@@ -20,7 +20,7 @@ const Order = ({ match }) => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getSeller(sellerId));
-  }, [dispatch, sellerId]); // [dispatch, sellerId, items]
+  }, [dispatch, sellerId, items]); // [dispatch, sellerId, items]
   const edit = useSelector((state) => state.editReducer.edit);
   return (
     <div>

@@ -35,7 +35,7 @@ const Cart = () => {
     if (!checkout) {
       setCheckout(true);
     }else{
-      // dispatch(postOrder(adress,cartItems, history))
+      // dispatch(placeOrder(adress,cartItems, history))
     }
   };
 

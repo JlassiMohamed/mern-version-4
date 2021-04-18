@@ -19,7 +19,7 @@ const Navbar = () => {
           {seller.name}
           <Link to="/checkout">
             <a className="btn-area" href="/">
-              Order
+              Orders
             </a>
           </Link>
           <Link to={`/seller/dashboard/${user.restaurant}`}>
@@ -38,7 +38,7 @@ const Navbar = () => {
           hello, {user.name}
           <Link to="/checkout">
             <a className="btn-area" href="/">
-              Order
+              Orders
             </a>
           </Link>
           <Link to="/cart">
