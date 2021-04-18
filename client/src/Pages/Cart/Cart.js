@@ -32,10 +32,8 @@ const Cart = () => {
   };
   const [checkout, setCheckout] = useState(false);
   const handleChechout = () => {
-    if (!checkout) {
+    if (checkout === false && cartItems.length !== 0) {
       setCheckout(true);
-    }else{
-      // dispatch(placeOrder(adress,cartItems, history))
     }
   };
 

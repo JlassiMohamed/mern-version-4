@@ -2,6 +2,7 @@ import { ADD_TO_CART, REMOVE_FROM_CART } from "../actionTypes/cart";
 
 const initialState = {
   cartItems: [],
+  status:null
 };
 
 const cartReducer = (state = initialState, { type, payload }) => {

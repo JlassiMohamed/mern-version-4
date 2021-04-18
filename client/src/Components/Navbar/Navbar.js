@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <header>
       <Link to="/">
-        <h2>Food Delivery App</h2>
+        <h2>FastFood</h2>
       </Link>
       {isAuth && edit ? (
         <div className="welcome">
