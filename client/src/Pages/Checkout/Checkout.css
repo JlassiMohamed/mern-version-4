@@ -1,7 +1,8 @@
 .orderscreen {
   display: flex;
-  max-width: 1300px;
+  max-width: 2000px;
   margin: 2rem auto;
+  margin-left: 40%;
 }
 
 .orderscreen__right {

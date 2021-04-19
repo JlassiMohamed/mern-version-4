@@ -6,7 +6,7 @@ const CartItem = ({ item, qtyChangeHandler, removeHandler }) => {
   return (
     <div className="cartitem">
       <div className="cartitem__image">
-        <img src={imageUrl} alt={title} style={{width:"100px"}}/>
+        <img src={imageUrl} alt={title} style={{ width: "100px" }} />
       </div>
       <p className="cartItem__name">{title}</p>
       <p className="cartitem__price">${price}</p>

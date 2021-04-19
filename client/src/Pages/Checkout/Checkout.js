@@ -25,11 +25,9 @@ const Checkout = () => {
     <div className="orderscreen">
       <div className="orderscreen__right">
         <div className="orderscreen__right">
-          <p>id: #{user ? user._id : null}</p>
           {cartItems.map((item) => (
             <div key={item._id}>
               <p>{item.title}</p>
-              <p>from: </p>
             </div>
           ))}
           <p>Subtotal of {getCartCount()} items</p>

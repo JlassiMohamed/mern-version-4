@@ -21,7 +21,7 @@ const SignUp = ({ history }) => {
       dispatch(videErrors());
     };
   }, [dispatch]);
-  
+
   return (
     <div className="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
       {errors.length > 0 ? errors.map((el) => <Errors error={el} />) : null}
@@ -29,7 +29,7 @@ const SignUp = ({ history }) => {
         <div className="row d-flex">
           <div className="col-lg-6">
             <img
-              src="https://i.imgur.com/uNGdWHi.png"
+              src="https://raw.githubusercontent.com/luisSuela/Stranger-Code/master/foodd.jpg"
               className="image"
               alt="signup img"
             />
