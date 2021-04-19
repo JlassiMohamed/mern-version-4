@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { Form } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import CartItem from "../../Components/CartItem/CartItem";
 import { addToCart, removeFromCart } from "../../JS/actions/cart";
+
 import "./Cart.css";
 
 const Cart = () => {
@@ -46,40 +48,44 @@ const Cart = () => {
               Your Cart Is Empty <Link to="/">Go Back</Link>
             </div>
           ) : checkout ? (
-            <form>
-              <label>Appartement Number</label>
-              <input
+            <Form>
+              <Form.Label className="label">Appartement Number</Form.Label>
+              <Form.Control
+                className="input"
                 name="appartement"
                 value={address.appartement}
                 onChange={handleChange}
                 placeholder="enter your name"
-                style={{ width: "200px" }}
+                style={{ width: "300px" }}
               />
-              <label>Street</label>
-              <input
+              <Form.Label className="label">Street</Form.Label>
+              <Form.Control
+                className="input"
                 name="street"
                 value={address.street}
                 onChange={handleChange}
                 placeholder="enter your contact phone"
-                style={{ width: "200px" }}
+                style={{ width: "300px" }}
               />
-              <label>Locality</label>
-              <input
+              <Form.Label className="label">Locality</Form.Label>
+              <Form.Control
+                className="input"
                 name="locality"
                 value={address.locality}
                 onChange={handleChange}
                 placeholder="register your email"
-                style={{ width: "200px" }}
+                style={{ width: "300px" }}
               />
-              <label>ZipCode</label>
-              <input
+              <Form.Label className="label">ZipCode</Form.Label>
+              <Form.Control
+                className="input"
                 name="zipCode"
                 value={address.zipCode}
                 onChange={handleChange}
                 placeholder="enter the address of your restaurant"
-                style={{ width: "200px" }}
+                style={{ width: "300px" }}
               />
-            </form>
+            </Form>
           ) : (
             cartItems.map((item) => (
               <CartItem

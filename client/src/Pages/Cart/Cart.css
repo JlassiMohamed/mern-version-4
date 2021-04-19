@@ -69,3 +69,7 @@
     margin: 1rem;
   }
 }
+
+.input {
+  margin-inline-start: 40%;
+}

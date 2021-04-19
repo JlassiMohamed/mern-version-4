@@ -1,0 +1,35 @@
+.itemCard {
+  display: inline-block;
+  background-color: #222831;
+
+  box-shadow: rgba(0, 0, 0, 0.7);
+  color: white;
+  margin: 2%;
+
+  background-size: 50px;
+}
+
+.itemTitle {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  color: white;
+}
+
+.itemImg {
+  border: 5px solid #272133;
+  box-shadow: 0 10px 50px red;
+  width: 300%;
+  height: 50%;
+}
+
+.button {
+  cursor: pointer;
+  background-color: #c47714;
+}
+.itemTag {
+  color: Black;
+}
+.items {
+  background-size: 500%;
+}
